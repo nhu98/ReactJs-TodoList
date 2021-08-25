@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  margin-top: auto;
+}
+.Aligned {
+  display: flex;
+  align-items: center;
+}
+.done {
+  text-decoration: line-through;
+  font-size: xx-small;
+}
+.hiddenIcoin {
+  visibility: hidden;
+}

@@ -1,52 +1,30 @@
-import './App.css';
-import React from 'react';
+import "./App.css";
+import React from "react";
+import TodoList from "./TodoList";
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {taskName:"",
-                  tasks:["di cho", "di xem phim"]              
-    };
+    this.state = { taskName: "", tasks: [] };
   }
 
-  myTaskChangeHandler = (event) => {
-    this.setState({taskName: event.target.value});
-    console.log("myTaskChangeHandler", event.target.value);
-  }
-  addTask = () => {
-    console.log("addTask", this.state.taskName);
-    this.setState({taskName:""});
-    this.state.tasks.push(this.state.taskName)
-  }
-
-  render(){
+  render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div>
-              Todo List
-          </div>
-          <div className="aligned">
-              <img src="./assets/2561291_plus_circle_icon.png"
-                alt ="add Task"
-                width = "25"
-                style ={{cursor:"pointer"}}
-                title = "click to add task"
-                onClick={() => this.addTask()}
-              />
-              <input type="text"
-                onChange={this.myTaskChangeHandler}
-                value={this.state.taskName}
-              />
-            </div>
-            <div>
-              <ul>
-                {this.state.tasks.map((value,index)=>{
-                    return <li key={index}>{value}</li>
-                })}
-              </ul>
-            </div>
-        </header>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Nhiem vu 1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <TodoList name="Danh sach di cho" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }
